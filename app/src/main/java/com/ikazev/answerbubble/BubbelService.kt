@@ -57,7 +57,7 @@ class BubbleService : Service() {
                         val dx = kotlin.math.abs(event.rawX - touchX)
                         val dy = kotlin.math.abs(event.rawY - touchY)
                         if (dx < dp(8) && dy < dp(8)) {
-                            val i = Intent(this, CaptureActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            val i = Intent(this@BubbleService, CaptureActivity::class.java).apply { addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) }
                             startActivity(i)
                         }
                         true
