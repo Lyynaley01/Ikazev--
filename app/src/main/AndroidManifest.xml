@@ -26,6 +26,18 @@
             android:name=".BubbleService"
             android:exported="false" />
         <service
+            android:name=".AutomationAccessibilityService"
+            android:label="Ikazev — Isi otomatis untuk aplikasi kuis milik sendiri"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+        <service
             android:name=".ScreenCaptureService"
             android:exported="false"
             android:foregroundServiceType="mediaProjection" />
